@@ -43,9 +43,9 @@ I'm passionate about building clean, efficient, and user-friendly applications. 
 ---
 
 ## 📫 Let's Connect!  
-💼 [LinkedIn](https://www.linkedin.com/in/dante-fasano-abb08860/) 
-🐦 [X](https://x.com/dantefasano)  
-🌐 [Portfolio](https://dantefasano.dev) *Still working on it*
+💼 [LinkedIn](https://www.linkedin.com/in/dante-fasano-abb08860/)  
+✖️ [X](https://x.com/dantefasano)  
+🌐 [Portfolio](https://dantefasano.dev) *Still working on it*  
 
 ---
 

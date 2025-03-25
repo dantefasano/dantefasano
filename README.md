@@ -11,30 +11,36 @@ I'm a full-stack developer specializing in modern web development. I create effi
 ## 🔧 Technologies & Tools
 
 <table>
-  <tr>
-    <td align="center">
-      <b>💻 Frontend</b><br><br>
-      <img src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript programming language" /><br>
-      <img src="https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript for typed JavaScript development" /><br>
-      <img src="https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React library for building user interfaces" />
-    </td>
-    <td align="center">
-      <b>⚙️ Backend</b><br><br>
-      <img src="https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node.js runtime environment for server-side JavaScript" /><br>
-      <img src="https://img.shields.io/badge/-Express-000000?style=flat-square&logo=express&logoColor=white" alt="Express framework for Node.js web development" /><br>
-      <img src="https://img.shields.io/badge/-JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white" alt="JSON Web Tokens for secure authentication" /><br>
-      <img src="https://img.shields.io/badge/-SQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="SQL language for structured databases" /><br>
-      <img src="https://img.shields.io/badge/-MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB NoSQL database" /><br>
-      <img src="https://img.shields.io/badge/-REST%20API-02569B?style=flat-square&logo=postman&logoColor=white" alt="REST API for web service integration" />
-    </td>
-    <td align="center">
-      <b>☁️ Cloud</b><br><br>
-      <img src="https://img.shields.io/badge/-Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black" alt="Firebase cloud service for web and mobile apps" /><br>
-      <img src="https://img.shields.io/badge/-Google%20Cloud-4285F4?style=flat-square&logo=google-cloud&logoColor=white" alt="Google Cloud platform services" /><br>
-      <img src="https://img.shields.io/badge/-AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white" alt="AWS cloud services from Amazon" /><br>
-      <img src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git version control for tracking changes" />
-    </td>
-  </tr>
+  <thead>
+    <tr>
+      <th align="center">💻 Frontend</th>
+      <th align="center">⚙️ Backend</th>
+      <th align="center">☁️ Cloud</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">
+        <img src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript programming language" /><br>
+        <img src="https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript for typed JavaScript development" /><br>
+        <img src="https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React library for building user interfaces" />
+      </td>
+      <td align="center">
+        <img src="https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node.js runtime environment for server-side JavaScript" /><br>
+        <img src="https://img.shields.io/badge/-Express-000000?style=flat-square&logo=express&logoColor=white" alt="Express framework for Node.js web development" /><br>
+        <img src="https://img.shields.io/badge/-JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white" alt="JSON Web Tokens for secure authentication" /><br>
+        <img src="https://img.shields.io/badge/-SQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="SQL language for structured databases" /><br>
+        <img src="https://img.shields.io/badge/-MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB NoSQL database" /><br>
+        <img src="https://img.shields.io/badge/-REST%20API-02569B?style=flat-square&logo=postman&logoColor=white" alt="REST API for web service integration" />
+      </td>
+      <td align="center">
+        <img src="https://img.shields.io/badge/-Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black" alt="Firebase cloud service for web and mobile apps" /><br>
+        <img src="https://img.shields.io/badge/-Google%20Cloud-4285F4?style=flat-square&logo=google-cloud&logoColor=white" alt="Google Cloud platform services" /><br>
+        <img src="https://img.shields.io/badge/-AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white" alt="AWS cloud services from Amazon" /><br>
+        <img src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git version control for tracking changes" />
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 ---

@@ -1,103 +1,219 @@
-# 👋 Hey!, I'm Dante Fasano
+# <div align="center">👋 Hey!, I'm Dante Fasano</div>
 
-![Profile Views](https://komarev.com/ghpvc/?username=dantefasano&label=Profile%20Views&color=blue&style=flat)  
-![GitHub Followers](https://img.shields.io/github/followers/dantefasano?style=social)  
-![GitHub Stars](https://img.shields.io/github/stars/dantefasano?style=social)
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=40&pause=1000&color=2E8BC0&center=true&vCenter=true&random=false&width=600&height=100&lines=Full+Stack+Developer;React+%7C+Node.js+%7C+Python;Always+Learning+%26+Growing" alt="Typing SVG" />
+</div>
 
-## About Me
+<div align="center">
+  <img src="https://img.shields.io/badge/Last%20Updated-2024--04--26%2011:21:00-2E8BC0?style=for-the-badge" alt="Last Updated" />
+</div>
 
-I'm a full-stack developer specializing in modern web development. I create efficient applications using React, Node.js, Express, and more. I’m passionate about clean design and crafting scalable software solutions.
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=dantefasano&label=Profile%20Views&color=2E8BC0&style=for-the-badge" alt="Profile Views" />
+  <img src="https://img.shields.io/github/followers/dantefasano?style=for-the-badge&color=2E8BC0" alt="GitHub Followers" />
+  <img src="https://img.shields.io/github/stars/dantefasano?style=for-the-badge&color=2E8BC0" alt="GitHub Stars" />
+</div>
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=dantefasano&show_icons=true&theme=radical&hide_border=true" alt="GitHub Stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=dantefasano&theme=radical&hide_border=true" alt="GitHub Streak" />
+</div>
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dantefasano&layout=compact&theme=radical&hide_border=true" alt="Top Languages" />
+</div>
+
+## 🎯 Current Focus
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="https://img.shields.io/badge/-Cloud%20Architecture-2E8BC0?style=for-the-badge" alt="Cloud Architecture" />
+      </td>
+      <td align="center">
+        <img src="https://img.shields.io/badge/-Full%20Stack%20Development-2E8BC0?style=for-the-badge" alt="Full Stack Development" />
+      </td>
+      <td align="center">
+        <img src="https://img.shields.io/badge/-DevOps-2E8BC0?style=for-the-badge" alt="DevOps" />
+      </td>
+    </tr>
+  </table>
+</div>
+
+---
+
+## 🚀 Featured Projects
+
+### Full-Stack Applications
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/dantefasano/python-todo-list-API">
+          <img src="https://github-readme-stats.vercel.app/api/pin/?username=dantefasano&repo=python-todo-list-API&theme=radical&hide_border=true" />
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/dantefasano/starwars-database">
+          <img src="https://github-readme-stats.vercel.app/api/pin/?username=dantefasano&repo=starwars-database&theme=radical&hide_border=true" />
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
+
+### Frontend Projects
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/dantefasano/todo-list">
+          <img src="https://github-readme-stats.vercel.app/api/pin/?username=dantefasano&repo=todo-list&theme=radical&hide_border=true" />
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/dantefasano/traffic-light">
+          <img src="https://github-readme-stats.vercel.app/api/pin/?username=dantefasano&repo=traffic-light&theme=radical&hide_border=true" />
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
 
 ## 🔧 Technologies & Tools
 
-<table>
-  <thead>
+<div align="center">
+  <table>
+    <thead>
+      <tr>
+        <th align="center">💻 Frontend</th>
+        <th align="center">⚙️ Backend</th>
+        <th align="center">☁️ Cloud</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td align="center">
+          <img src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+          <img src="https://img.shields.io/badge/-TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+          <img src="https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
+        </td>
+        <td align="center">
+          <img src="https://img.shields.io/badge/-Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
+          <img src="https://img.shields.io/badge/-Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express" />
+          <img src="https://img.shields.io/badge/-Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+        </td>
+        <td align="center">
+          <img src="https://img.shields.io/badge/-Google%20Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" alt="Google Cloud" />
+          <img src="https://img.shields.io/badge/-AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS" />
+          <img src="https://img.shields.io/badge/-Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Microsoft Azure" />
+          <img src="https://img.shields.io/badge/-Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" alt="Firebase" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+## 🌱 What I'm Working On
+
+<div align="center">
+  <table>
     <tr>
-      <th align="center">💻 Frontend</th>
-      <th align="center">⚙️ Backend</th>
-      <th align="center">☁️ Cloud</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
       <td align="center">
-        <img src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript programming language" /><br>
-        <img src="https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript for typed JavaScript development" /><br>
-        <img src="https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React library for building user interfaces" />
+        <img src="https://img.shields.io/badge/-Python%20Todo%20List%20API-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Todo List API" />
       </td>
       <td align="center">
-        <img src="https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node.js runtime environment for server-side JavaScript" /><br>
-        <img src="https://img.shields.io/badge/-Express-000000?style=flat-square&logo=express&logoColor=white" alt="Express framework for Node.js web development" /><br>
-        <img src="https://img.shields.io/badge/-JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white" alt="JSON Web Tokens for secure authentication" /><br>
-        <img src="https://img.shields.io/badge/-SQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="SQL language for structured databases" /><br>
-        <img src="https://img.shields.io/badge/-MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB NoSQL database" /><br>
-        <img src="https://img.shields.io/badge/-REST%20API-02569B?style=flat-square&logo=postman&logoColor=white" alt="REST API for web service integration" />
+        <img src="https://img.shields.io/badge/-Star%20Wars%20Database-000000?style=for-the-badge&logo=react&logoColor=61DAFB" alt="Star Wars Database" />
       </td>
       <td align="center">
-        <img src="https://img.shields.io/badge/-Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black" alt="Firebase cloud service for web and mobile apps" /><br>
-        <img src="https://img.shields.io/badge/-Google%20Cloud-4285F4?style=flat-square&logo=google-cloud&logoColor=white" alt="Google Cloud platform services" /><br>
-        <img src="https://img.shields.io/badge/-AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white" alt="AWS cloud services from Amazon" /><br>
-        <img src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git version control for tracking changes" />
+        <img src="https://img.shields.io/badge/-React%20Components-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React Components" />
       </td>
     </tr>
-  </tbody>
-</table>
-
----
-
-## 🌱 What I’m Working On
-
-- 🚀 A **landing page** using **React** with reusable components for responsive design.
-- 🎴 A **random card generator** that creates unique cards on every refresh.
-- 🛍️ An **ecommerce site (BitDuds)** featuring a dynamic menu system and user-friendly interface.
-
----
-
-## 📊 GitHub Stats
-
-<p align="center">
-  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=dantefasano&show_icons=true&theme=radical" alt="Dante Fasano GitHub stats" />
-  <img width="48%" src="https://github-readme-streak-stats.herokuapp.com/?user=dantefasano&theme=radical" alt="GitHub streak stats for Dante Fasano" />
-</p>
-
----
-
-## 📫 Let's Connect!
-
-💼 [Connect with me on LinkedIn](https://www.linkedin.com/in/dante-fasano-abb08860/) |  
-✖️ [Follow me on X](https://x.com/dantefasano) |  
-🌐 [Visit my Portfolio](https://dantefasano.dev) _(coming soon)_
-
----
-
-## 🔗 Credly Profile
-
-Check out my professional certifications on Credly:  
-[![Credly Profile](https://img.shields.io/badge/Credly-Dante%20Fasano-blue?style=flat-square&logo=credly)](https://www.credly.com/users/dante-fasano)
-
-🔥 **Fun Fact:** I enjoy solving real-world problems by continuously learning new technologies and methodologies.
+  </table>
+</div>
 
 ## 🎖️ Certifications & Awards
 
-- **Google Cloud Associate Cloud Engineer**  
-  [![Google Cloud Associate Cloud Engineer](https://img.shields.io/badge/Google%20Cloud-Associate%20Cloud%20Engineer-brightgreen?style=flat-square&logo=google-cloud)](https://www.credly.com/badges/e9549a08-7d45-426b-b629-2710fb7b1eb9/public_url)
+<div align="center">
+  <a href="https://www.credly.com/badges/e9549a08-7d45-426b-b629-2710fb7b1eb9/public_url">
+    <img src="https://img.shields.io/badge/Google%20Cloud-Associate%20Cloud%20Engineer-brightgreen?style=for-the-badge&logo=google-cloud" alt="Google Cloud Associate Cloud Engineer" />
+  </a>
+</div>
 
-<!--
-### Professional Enhancements (Hidden)
+## 📫 Let's Connect!
 
-#### 🖼️ Professional Profile Image
-Consider adding a professional headshot or avatar here to personalize your profile.
+<div align="center">
+  <a href="https://www.linkedin.com/in/dante-fasano-abb08860/">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="https://x.com/dantefasano">
+    <img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" />
+  </a>
+  <a href="https://dantefasano.dev">
+    <img src="https://img.shields.io/badge/Portfolio-2E8BC0?style=for-the-badge&logo=about.me&logoColor=white" alt="Portfolio" />
+  </a>
+</div>
 
-#### 🚀 Featured Projects
-- **Project Alpha:** A brief description with a link to the repository or live demo.
-- **Project Beta:** A short overview of functionality, technologies used, and a link.
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=20&pause=1000&color=2E8BC0&center=true&vCenter=true&random=false&width=600&height=50&lines=Always+Learning+%26+Growing" alt="Typing SVG" />
+</div>
 
-#### 🎖️ Custom Badges & Certifications
-Add any certifications or awards using custom badges to highlight your achievements.
+## 🌟 Achievements
 
-#### 📧 Enhanced Contact Section
-Consider adding a dedicated section with your email and social media links along with clear call-to-action messages.
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="https://img.shields.io/badge/-Google%20Cloud%20Certified-2E8BC0?style=for-the-badge" alt="Google Cloud Certified" />
+      </td>
+      <td align="center">
+        <img src="https://img.shields.io/badge/-Full%20Stack%20Developer-2E8BC0?style=for-the-badge" alt="Full Stack Developer" />
+      </td>
+      <td align="center">
+        <img src="https://img.shields.io/badge/-Open%20Source%20Contributor-2E8BC0?style=for-the-badge" alt="Open Source Contributor" />
+      </td>
+    </tr>
+  </table>
+</div>
 
-#### 📈 Additional GitHub Stats
-You could include extra widgets, such as most used languages or top repositories, to showcase your activity.
--->
+## 📚 Learning Journey
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="https://img.shields.io/badge/-Cloud%20Native-2E8BC0?style=for-the-badge" alt="Cloud Native" />
+      </td>
+      <td align="center">
+        <img src="https://img.shields.io/badge/-Microservices-2E8BC0?style=for-the-badge" alt="Microservices" />
+      </td>
+      <td align="center">
+        <img src="https://img.shields.io/badge/-AI/ML-2E8BC0?style=for-the-badge" alt="AI/ML" />
+      </td>
+    </tr>
+  </table>
+</div>
+
+## 🤝 Let's Collaborate!
+
+<div align="center">
+  <p>I'm always open to collaborating on interesting projects and learning new technologies.</p>
+  <p>Feel free to reach out if you'd like to work together!</p>
+</div>
+
+<div align="center">
+  <a href="https://www.linkedin.com/in/dante-fasano-abb08860/">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="https://x.com/dantefasano">
+    <img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" />
+  </a>
+  <a href="https://dantefasano.dev">
+    <img src="https://img.shields.io/badge/Portfolio-2E8BC0?style=for-the-badge&logo=about.me&logoColor=white" alt="Portfolio" />
+  </a>
+</div>
+
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=20&pause=1000&color=2E8BC0&center=true&vCenter=true&random=false&width=600&height=50&lines=Always+Learning+%26+Growing" alt="Typing SVG" />
+</div>

@@ -31,6 +31,8 @@ jobs:
         run: |
           # Get current date and time
           CURRENT_DATE=$(date +"%Y-%m-%d %H:%M:%S")
+          # URL encode the date (handle spaces and special characters)
+          ENCODED_DATE=$(echo "$CURRENT_DATE" | sed 's/ /%20/g' | sed 's/:/%3A/g')
 
           # Create a temporary file for the projects section
           TEMP_FILE=$(mktemp)
@@ -38,6 +40,14 @@ jobs:
           # Add projects section header
           cat > "$TEMP_FILE" << EOF
           ## Latest Projects
+
+          ### Project Name
+          Description
+          - **Technologies**: Language
+          - **Stars**: Count
+          - **Forks**: Count
+          - **Last Updated**: Date
+          - [View Repository](URL)
 
           EOF
 
@@ -83,8 +93,32 @@ jobs:
             fi
           fi
 
-          # Update the last updated timestamp
-          sed -i "s/Last%20Updated-.*-2E8BC0/Last%20Updated-$CURRENT_DATE-2E8BC0/" README.md
+          # Update the last updated timestamp badge with properly encoded date
+          sed -i "s|<img src=\"https://img.shields.io/badge/Last%20Updated-.*-2E8BC0?style=for-the-badge\" alt=\"Last Updated\" />|<img src=\"https://img.shields.io/badge/Last%20Updated-$ENCODED_DATE-2E8BC0?style=for-the-badge\" alt=\"Last Updated\" />|" README.md
+
+          # Update "What I'm Working On" section with latest projects
+          WORKING_ON_START=$(echo "$README_CONTENT" | grep -n "## 🌱 What I'm Working On" | cut -d: -f1)
+          if [ ! -z "$WORKING_ON_START" ]; then
+            # Get the next 3 most recent non-forked repositories
+            WORKING_ON_REPOS=$(echo "$REPOS" | jq -r '.[] | select(.fork == false) | .name' | head -n 3)
+            
+            # Create the badges section
+            BADGES_SECTION="<div align=\"center\">\n  <table>\n    <tr>"
+            for repo in $WORKING_ON_REPOS; do
+              BADGES_SECTION+="\n      <td align=\"center\">\n        <img src=\"https://img.shields.io/badge/-${repo}-2E8BC0?style=for-the-badge\" alt=\"${repo}\" />\n      </td>"
+            done
+            BADGES_SECTION+="\n    </tr>\n  </table>\n</div>"
+            
+            # Find the end of the working on section
+            NEXT_SECTION=$(echo "$README_CONTENT" | tail -n +$((WORKING_ON_START+1)) | grep -n "^## " | head -n 1 | cut -d: -f1)
+            if [ ! -z "$NEXT_SECTION" ]; then
+              # Replace the content between sections
+              head -n $((WORKING_ON_START)) README.md > README.md.new
+              echo -e "\n$BADGES_SECTION" >> README.md.new
+              tail -n +$((WORKING_ON_START+NEXT_SECTION)) README.md >> README.md.new
+              mv README.md.new README.md
+            fi
+          fi
 
           # Check if the README was updated
           if git diff --quiet README.md; then

@@ -8,19 +8,21 @@ on:
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: "20.17.0" # Compatible Node.js version
-          check-latest: true # Ensure the latest version of npm is installed
+          node-version: "20.17.0"
+          cache: "npm"
 
       - name: Install dependencies
         run: |
           npm install -g @octokit/rest
+        continue-on-error: false
 
       - name: Update README
         id: update-readme
@@ -30,14 +32,25 @@ jobs:
           # Get current date and time
           CURRENT_DATE=$(date +"%Y-%m-%d %H:%M:%S")
 
+          # Check if README.md exists
+          if [ ! -f README.md ]; then
+            echo "::error::README.md file not found"
+            exit 1
+          fi
+
           # Update the README with the current date
-          sed -i "s/Last%20Updated-.*-2E8BC0/Last%20Updated-$CURRENT_DATE-2E8BC0/" README.md
+          if ! sed -i "s/Last%20Updated-.*-2E8BC0/Last%20Updated-$CURRENT_DATE-2E8BC0/" README.md; then
+            echo "::error::Failed to update README.md"
+            exit 1
+          fi
 
           # Check if the README was updated
           if git diff --quiet README.md; then
-            echo "::set-output name=changed::false"
+            echo "::notice::No changes detected in README.md"
+            echo "changed=false" >> $GITHUB_OUTPUT
           else
-            echo "::set-output name=changed::true"
+            echo "::notice::Changes detected in README.md"
+            echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
       - name: Commit and push changes
@@ -48,10 +61,11 @@ jobs:
           git add README.md
           git commit -m "Update README with latest stats"
           git push
+        continue-on-error: false
 
       - name: Create Pull Request
         if: steps.update-readme.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: Update README with latest stats
@@ -59,3 +73,4 @@ jobs:
           delete-branch: true
           title: Update README
           body: Automated update of README with latest stats.
+          labels: automated-pr

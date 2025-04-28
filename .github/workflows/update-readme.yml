@@ -9,19 +9,21 @@ jobs:
   update-readme:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "22" # Updated to a compatible Node.js version
+          node-version: "20.17.0" # Compatible Node.js version
+          check-latest: true # Ensure the latest version of npm is installed
 
       - name: Install dependencies
         run: |
-          npm install -g npm@latest  # Install the latest npm version
           npm install -g @octokit/rest
 
       - name: Update README
+        id: update-readme
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -31,41 +33,29 @@ jobs:
           # Update the README with the current date
           sed -i "s/Last%20Updated-.*-2E8BC0/Last%20Updated-$CURRENT_DATE-2E8BC0/" README.md
 
-      - name: Commit and push if changed
+          # Check if the README was updated
+          if git diff --quiet README.md; then
+            echo "::set-output name=changed::false"
+          else
+            echo "::set-output name=changed::true"
+          fi
+
+      - name: Commit and push changes
+        if: steps.update-readme.outputs.changed == 'true'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add README.md
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update README with latest stats" && git push)
-          # Check if the README was updated
-          if [ $? -eq 0 ]; then
-            echo "README.md was updated."
-          else
-            echo "No changes to README.md."
-          fi
-      - name: Create a pull request
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          # Create a pull request if there are changes
-          git checkout -b update-readme
-          git push origin update-readme
-          gh pr create --base main --head update-readme --title "Update README" --body "Automated update of README with latest stats."
-          # Check if the pull request was created successfully
-          if [ $? -eq 0 ]; then
-            echo "Pull request created successfully."
-          else
-            echo "Failed to create pull request."
-          fi
-      - name: Clean up
-        run: |
-          # Clean up the branch after creating the pull request
-          git checkout main
-          git branch -D update-readme
-          git push origin --delete update-readme || echo "Branch deletion failed."
+          git commit -m "Update README with latest stats"
+          git push
 
-          # Clean up the local repository
-          git gc --prune=now
-          git remote prune origin || echo "Failed to prune remote branches."
-
-          echo "Cleanup completed."
+      - name: Create Pull Request
+        if: steps.update-readme.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Update README with latest stats
+          branch: update-readme
+          delete-branch: true
+          title: Update README
+          body: Automated update of README with latest stats.

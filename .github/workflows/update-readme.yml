@@ -52,16 +52,6 @@ jobs:
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
-      - name: Commit and push changes
-        if: steps.update-readme.outputs.changed == 'true'
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add README.md
-          git commit -m "Update README with latest stats"
-          git push
-        continue-on-error: false
-
       - name: Create Pull Request
         if: steps.update-readme.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v5

@@ -14,11 +14,11 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: "22" # Updated to a compatible Node.js version
 
       - name: Install dependencies
         run: |
-          npm install -g npm@10.8.2  # Specify a compatible npm version
+          npm install -g npm@latest  # Install the latest npm version
           npm install -g @octokit/rest
 
       - name: Update README

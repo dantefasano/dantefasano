@@ -23,7 +23,6 @@ jobs:
       - name: Install dependencies
         run: |
           npm install -g @octokit/rest
-        continue-on-error: false
 
       - name: Update README
         id: update-readme
@@ -33,17 +32,59 @@ jobs:
           # Get current date and time
           CURRENT_DATE=$(date +"%Y-%m-%d %H:%M:%S")
 
-          # Check if README.md exists
-          if [ ! -f README.md ]; then
-            echo "::error::README.md file not found"
-            exit 1
+          # Create a temporary file for the projects section
+          TEMP_FILE=$(mktemp)
+
+          # Add projects section header
+          cat > "$TEMP_FILE" << EOF
+          ## Latest Projects
+
+          EOF
+
+          # Use Octokit to fetch recent repositories
+          REPOS=$(npx -y @octokit/rest@latest repos.listForUser --username dantefasano --sort updated --direction desc --per_page 5)
+
+          # Process each repository
+          echo "$REPOS" | jq -r '.[] | select(.fork == false) | "### \(.name)\n\n\(.description)\n\n- **Technologies**: \(.language)\n- **Stars**: \(.stargazers_count)\n- **Forks**: \(.forks_count)\n- **Last Updated**: \(.updated_at)\n- [View Repository](\(.html_url))\n\n"' >> "$TEMP_FILE"
+
+          # Read the existing README
+          README_CONTENT=$(cat README.md)
+
+          # Find the start and end of the projects section
+          PROJECTS_START=$(echo "$README_CONTENT" | grep -n "## Latest Projects" | cut -d: -f1)
+          if [ -z "$PROJECTS_START" ]; then
+            # If no projects section exists, add it before the About Me section
+            ABOUT_ME_LINE=$(echo "$README_CONTENT" | grep -n "## About Me" | cut -d: -f1)
+            if [ -z "$ABOUT_ME_LINE" ]; then
+              # If no About Me section, append to the end
+              echo "$README_CONTENT" > README.md
+              echo -e "\n$(cat $TEMP_FILE)" >> README.md
+            else
+              # Insert before About Me section
+              head -n $((ABOUT_ME_LINE-1)) README.md > README.md.new
+              cat "$TEMP_FILE" >> README.md.new
+              tail -n +$ABOUT_ME_LINE README.md >> README.md.new
+              mv README.md.new README.md
+            fi
+          else
+            # Find the next section header after projects
+            NEXT_SECTION=$(echo "$README_CONTENT" | tail -n +$((PROJECTS_START+1)) | grep -n "^## " | head -n 1 | cut -d: -f1)
+            if [ -z "$NEXT_SECTION" ]; then
+              # If no next section, replace everything after projects
+              head -n $((PROJECTS_START-1)) README.md > README.md.new
+              cat "$TEMP_FILE" >> README.md.new
+              mv README.md.new README.md
+            else
+              # Replace between projects and next section
+              head -n $((PROJECTS_START-1)) README.md > README.md.new
+              cat "$TEMP_FILE" >> README.md.new
+              tail -n +$((PROJECTS_START+NEXT_SECTION)) README.md >> README.md.new
+              mv README.md.new README.md
+            fi
           fi
 
-          # Update the README with the current date
-          if ! sed -i "s/Last%20Updated-.*-2E8BC0/Last%20Updated-$CURRENT_DATE-2E8BC0/" README.md; then
-            echo "::error::Failed to update README.md"
-            exit 1
-          fi
+          # Update the last updated timestamp
+          sed -i "s/Last%20Updated-.*-2E8BC0/Last%20Updated-$CURRENT_DATE-2E8BC0/" README.md
 
           # Check if the README was updated
           if git diff --quiet README.md; then
@@ -59,9 +100,9 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.PAT_TOKEN }}
-          commit-message: Update README with latest stats
+          commit-message: Update README with latest projects
           branch: update-readme
           delete-branch: true
-          title: Update README
-          body: Automated update of README with latest stats.
+          title: Update README with latest projects
+          body: Automated update of README with latest projects and stats.
           labels: automated-pr
